@@ -1,0 +1,25 @@
+package Messages;
+
+message Message{
+
+	enum MessageType {
+		DISP_PLAY = 0;
+		DISP_PLAY_CANCEL = 1;
+		LOG_OK = 2;
+		LOG = 3;
+		USER_AVAILABLE_PLAY = 4;
+		USER_AVAILABLE_PLAY_CANCEL = 5;
+	}
+	required MessageType messageType = 1;
+	
+	optional string username = 2;
+	
+	message Login{
+		required string password = 1;
+	}
+	
+	optional Login login = 3;
+}
+	
+
+
